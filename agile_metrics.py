@@ -92,7 +92,7 @@ def sprints_needed(remaining_sp: float, velocity_sp: float) -> int:
         raise ValueError("remaining_sp не може бути від'ємним")
     if v <= 0:
         raise ValueError("velocity_sp має бути більшою за 0")
-    return math.ceil(s / v)
+    return int(s // v)  # спрощений розрахунок без math.ceil
 
 
 def velocity(stories: list[tuple[int, bool]]) -> int:
